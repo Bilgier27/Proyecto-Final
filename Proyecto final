@@ -31,10 +31,12 @@ ls_Gender = []
 import os 
 def fnt_clean():
     os.system('cls')
-    print('Author: Bilgier Perea A.')
-    print('Date: 21 de Mayo del 2024')
-    print('Welcome to the Google company')
-    print('Do not be evil\n')
+    print("=============================================")
+    print("          Author: Bilgier Perea A.                 ")
+    print("          Date: 21 de Mayo del 2024                ")
+    print("          Welcome to the Google company            ")
+    print("              Do not be evil                       ")
+    print("=============================================\n")
 #A variable is defined to register all the postulates
 def fnt_register(Name, Id, Mail, Contact, Age, Experiencie, Profession, City, Gender):
     if Id == '' or Name == '' or Mail == '' or Contact == '' or Age == '' or Experiencie == '' or Profession == '' or City == '' or Gender == '':
@@ -85,9 +87,14 @@ def fnt_selector(option):
     #In this option 2 a for loop is created to repeat and print all the data that I add to the lists 
     elif option == '2':
         fnt_clean()
+        print("=============================================")
+        print("|           Registered Candidates           |")
+        print("=============================================")
+        print("ID      Name             Mail               Contact         Age    Experience    Profession           City        Gender")
+        print("="*120)  # Horizontal line to separate header from data
         for x in range(len(ls_id)):
-            print(f'{ls_id[x]}     {ls_names[x]}     {ls_mail[x]}     {ls_contact[x]}     {ls_age[x]}     {ls_experience[x]}     {ls_profession[x]}     {ls_city[x]}   {ls_Gender[x]}')
-            enter = input('\nPress <ENTER> to continue')
+            print(f"{ls_id[x]:<8} {ls_names[x]:<16} {ls_mail[x]:<20} {ls_contact[x]:<16} {ls_age[x]:<6} {ls_experience[x]:<12} {ls_profession[x]:<16} {ls_city[x]:<12} {ls_Gender[x]:<6}")
+        input('\nPress <ENTER> to continue')
     elif option == '3':
         sw = False
 #I create a cycle of the sw variable so that the program repeats itself until the user wants to exit.
