@@ -1,98 +1,98 @@
 """
-1. Mediante este algoritmo se permitira a usuarios postularse para un cargo en la empresa Google:
-	Requisitos:
-    A. Edad entre 22 y 35 años.
-	B. Profesion dedicada entre Ingeniero de Sistemas o Ingeniero Informatico.
-	C. Experiencia laboral entre 1 y 3 años contando pruebas anteriores.
-2. Consultar candidatos:
-    - En este campo se permitira revisar o chequear cuales son aquellos postulados que cumplen con las caracteristicas requeridas.
-3. Información almacenada en base:
-	A. Nombre completo.
-	B. Dni o Identificacion.
-	C. E-mail.
-	D. Numero telefonico.
-	E. Edad.
-	F. Años de experiencia laboral.
-	G. Profesion graduada.
-	H. Ciudad
-	I. Sexo sea Masculino o Femenino.
+1. Using this algorithm, users will be allowed to apply for a position in the Google company:
+    Requirements:
+    A. Age between 22 and 35 years.
+    B. Dedicated profession between Systems Engineer or Computer Engineer.
+    C. Work experience between 1 and 4 years including previous tests.
+2. Consult postulates:
+    - This field will allow you to review or check which are those postulates that meet the required characteristics.
+3. Information stored in base:
+    A. Full name.
+    B. ID or Identification.
+    C. Email.
+    D. Telephone number.
+    E. Age.
+    F. Years of work experience.
+    G. Graduated profession.
+    H. City
+    I. Sex whether Male or Female.
 """
-#Se hace la creacion de listas siguientes a utilizar
-ls_nombres = []
-ls_identificacion = []
-ls_correo = []
-ls_contacto = []
-ls_edad = []
-ls_experiencia = []
-ls_profesion = []
-ls_ciudad = []
-ls_sexo = []
-#Se importa la variable limpieza
+#The creation of next lists to be used is done
+ls_names = []
+ls_id = []
+ls_mail = []
+ls_contact = []
+ls_age = []
+ls_experience = []
+ls_profession = []
+ls_city = []
+ls_sex = []
+#The cleaning variable is imported
 import os 
-def fnt_limpiar():
+def fnt_clean():
     os.system('cls')
-    print('Autor: Bilgier Perea A.')
-    print('Fecha: 21 de Mayo del 2024')
-    print('Bienvenido a la empresa Google')
-    print('No seas malvado\n')
-#Se define una variable para registrar todos los postulados
-def fnt_registrar(nombres, identificacion, correo, contacto, edad, experiencia, profesion, ciudad, sexo):
-    if identificacion == '' or nombres == '' or correo == '' or contacto == '' or edad == '' or experiencia == '' or profesion == '' or ciudad == '' or sexo == '':
-        enter = input('Error, debe ingresar todos los datos <ENTER>')
-#Se usa la variable .append para agregarle o insertale valores a mi lista existente
+    print('Author: Bilgier Perea A.')
+    print('Date: 21 de Mayo del 2024')
+    print('Welcome to the Google company')
+    print('Do not be evil\n')
+#A variable is defined to register all the postulates
+def fnt_register(Name, Id, Mail, Contact, Age, Experiencie, Profession, City, Sex):
+    if Id == '' or Name == '' or Mail == '' or Contact == '' or Age == '' or Experiencie == '' or Profession == '' or City == '' or Sex == '':
+        enter = input('Error, you must enter all data <ENTER>')
+#The .append variable is used to add or insert values to my existing list
     else:
-        ls_identificacion.append(identificacion)
-        ls_nombres.append(nombres)
-        ls_correo.append(correo)
-        ls_contacto.append(contacto)
-        ls_edad.append(edad)
-        ls_experiencia.append(experiencia)
-        ls_profesion.append(profesion)
-        ls_ciudad.append(ciudad)
-        ls_sexo.append(sexo)
-        enter = input('\nPersona ya se encuentra registrada con exito <ENTER>')
-#Se define una variable selector, la variable selector es para seleccionar la opcion que el usuario desea.
-def fnt_selector(opcion):
+        ls_id.append(Id)
+        ls_names.append(Name)
+        ls_mail.append(Mail)
+        ls_contact.append(Contact)
+        ls_age.append(Age)
+        ls_experience.append(Experiencie)
+        ls_profession.append(Profession)
+        ls_city.append(City)
+        ls_sex.append(Sex)
+        enter = input('\nPerson is already registered successfully <ENTER>')
+#A selector variable is defined, the selector variable is to select the option that the user wants.
+def fnt_selector(option):
     global sw
-    fnt_limpiar()
-    if opcion == '1':
-        #Se pone primero la identificacion para luego buscar a el candidato por su identificion y sea mas exacta su busqueda.
-        identificacion = input('\nIdentificacion:  ')
-        if identificacion in ls_identificacion:
-            enter = input('Esta persona ya se encuentra registrada <ENTER>')
+    fnt_clean()
+    if option == '1':
+        #The Id is put first to then search for the candidate by his identification and the search is more exact.
+        Id = input('\nId:  ')
+        if Id in ls_id:
+            enter = input('This person is already registered <ENTER>')
         else:
-            #Se le piden 3 datos obligatorios al candidato, si los cumple puede seguir con el formulario si no lo manda a un else que le dice que no cumple.
-            edad = int(input('Edad:  '))
-            experiencia = int(input('Experiencia:   '))
-            profesion = input('Profesion\n1. Ing. Sistemas\n2. Ing. Informatica\n - >')
-            if((experiencia >= 2 and experiencia <= 4) and (profesion == '1' or profesion == '2') and (edad >= 25 and edad <=35)):
-                if profesion == '1':
-                    profesion = 'Ingenieria de Sistemas'
-                elif profesion == '2':
-                    profesion = 'Ingenieria Informatica'
-                nombre = input('Nombre:  ')
-                correo = input('Correo:  ')
-                contacto = input('Contacto:  ')
-                ciudad = input('Ciudad:  ')
-                sexo = input('Sexo\n1.Masculino\n2.Femenino\n ->')
-                if sexo == '1':
-                    sexo = 'Masculino'
-                elif sexo == '2':
-                    sexo = 'Femenino'
-                fnt_registrar(nombre, identificacion, correo, contacto, edad, experiencia, profesion, ciudad, sexo)
+            #Three mandatory pieces of information are requested from the candidate; if they comply, they can continue with the form, otherwise they send it to an else who tells them that they do not comply.
+            Age = int(input('Age:  '))
+            Experiencie = int(input('Experiencie:   '))
+            Profession = input('Profession\n1. Systems Engineer\n2. Computer Engineer\n - >')
+            if((Experiencie >= 1 and Experiencie <= 4) and (Profession == '1' or Profession == '2') and  Age >= 22 and Age <=35):
+                if Profession == '1':
+                    Profession = 'Systems Engineer'
+                elif Profession == '2':
+                    Profession = 'Computer Engineer'
+                Name = input('Name:  ')
+                Mail = input('Mail:  ')
+                Contact = input('Contact:  ')
+                City = input('City:  ')
+                Sex = input('Sex\n1.Masculino\n2.Femenino\n ->')
+                if Sex == '1':
+                    Sex = 'Male'
+                elif Sex == '2':
+                    Sex = 'Female'
+                fnt_register(Name, Id, Mail, Contact, Age, Experiencie, Profession, City, Sex)
             else:   
-                input('<ERROR> El candidato no cumple con los requisitos')
-    #En esta opcion 2 se crea un ciclo for para repetir e imprimir todos los datos que agrego a las listas 
-    elif opcion == '2':
-        fnt_limpiar()
-        for x in range(len(ls_identificacion)):
-            print(f'{ls_identificacion[x]}     {ls_nombres[x]}     {ls_correo[x]}     {ls_contacto[x]}     {ls_edad[x]}     {ls_experiencia[x]}     {ls_profesion[x]}     {ls_ciudad[x]}   {ls_sexo[x]}')
-            enter = input('\nPresione <ENTER> para continuar')
-    elif opcion == '3':
+                input('<ERROR> The candidate does not meet the requirements')
+    #In this option 2 a for loop is created to repeat and print all the data that I add to the lists 
+    elif option == '2':
+        fnt_clean()
+        for x in range(len(ls_id)):
+            print(f'{ls_id[x]}     {ls_names[x]}     {ls_mail[x]}     {ls_contact[x]}     {ls_age[x]}     {ls_experience[x]}     {ls_profession[x]}     {ls_city[x]}   {ls_sex[x]}')
+            enter = input('\nPress <ENTER> to continue')
+    elif option == '3':
         sw = False
-#Creo un ciclo de la variable sw para que el programa se repita hasta que el usuario quiera salir.
+#I create a cycle of the sw variable so that the program repeats itself until the user wants to exit.
 sw = True
 while sw == True:
-    fnt_limpiar()
-    opcion = input('1. Registrar candidatos\n2. Mostrar candidatos\n3. Salir\n- >  ')
-    fnt_selector(opcion)
+    fnt_clean()
+    option = input('1. Register postulates\n2. Show postulates\n3. Salir\n- >  ')
+    fnt_selector(option)
